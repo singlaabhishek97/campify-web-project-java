@@ -2,9 +2,7 @@ package com.web.project.java.campify.campifywebprojectjava.camp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -26,6 +24,13 @@ public class CampsController {
         ModelAndView model = new ModelAndView("/campgrounds");
         List<Campground> std = service.findAll();
         model.addObject("camps", std);
+        return model;
+    }
+
+    @GetMapping("/campgrounds/{id}")
+    public ModelAndView showCamp(@PathVariable int id) {
+        ModelAndView model = new ModelAndView("/show");
+        model.addObject("camp", service.findAll().get(id));
         return model;
     }
 

@@ -37,13 +37,16 @@
     <div class="row text-center" style="display:flex; flex-wrap:wrap">
         <%List<Campground> camps =
                 (ArrayList<Campground>)request.getAttribute("camps");
-        for ( Campground item : camps){ %>
+        for ( int i = 0; i < camps.size(); i++){ %>
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
-                    <img style="height:300px; width:300px" src=<%= item.getSrc() %> alt=<%= item.getName() %>>
+                    <img style="height:300px; width:300px" src=<%= camps.get(i).getSrc() %> alt=<%= camps.get(i).getName() %>>
                     <div class="caption">
-                        <h4><%= item.getName() %></h4>
+                        <h4><%= camps.get(i).getName() %></h4>
                     </div>
+                    <p>
+                        <a href="/campgrounds/<%=i%>" class="btn btn-primary">More Info</a>
+                    </p>
                 </div>
             </div>
         <%}%>
