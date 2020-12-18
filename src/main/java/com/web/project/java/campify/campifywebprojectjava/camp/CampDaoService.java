@@ -13,8 +13,8 @@ public class CampDaoService {
     private static int campsCount = 3;
 
     static {
-        camps.add(new Campground("Solang Valley", "https://i.imgur.com/ODDE4xD.jpg"));
-        camps.add(new Campground( "Spiti Valley", "https://i.imgur.com/P8T8Sti.jpg"));
+        camps.add(new Campground("Solang Valley", "https://i.imgur.com/ODDE4xD.jpg", "Solang Valley in Manali attracts visitors from the far ends of the world"));
+        camps.add(new Campground( "Spiti Valley", "https://i.imgur.com/P8T8Sti.jpg", "Spiti Valley nestled in the Keylong district of Himachal Pradesh"));
 }
 
     public Campground save(Campground camp) {

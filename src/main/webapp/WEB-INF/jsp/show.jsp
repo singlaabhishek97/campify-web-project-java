@@ -25,6 +25,6 @@
 <%Campground camp = (Campground)request.getAttribute("camp");%>
 <h1><%=camp.getName()%></h1>
 <img style="height:300px; width:300px" src=<%= camp.getSrc()%> alt=<%=camp.getName()%>>
-
+<p><%=camp.getDescription()%></p>
 </body>
 </html>
