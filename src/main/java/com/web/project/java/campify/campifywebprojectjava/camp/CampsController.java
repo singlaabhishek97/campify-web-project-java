@@ -41,7 +41,12 @@ public class CampsController {
 
     @PostMapping("/campgrounds")
     public ModelAndView createCamp(String name, String src, String description) {
-        Campground savedCamp = service.save(new Campground(name, src, description));
+        Campground camp = new Campground.CampBuilder()
+                .setName(name)
+                .setSrc(src)
+                .setDescription(description)
+                .getCamp();
+        Campground savedCamp = service.save(camp);
         return retrieveAllCamps();
     }
 

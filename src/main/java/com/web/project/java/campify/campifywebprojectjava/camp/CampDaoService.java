@@ -10,12 +10,23 @@ import java.util.List;
 public class CampDaoService {
     private static List<Campground> camps = new ArrayList<>();
 
-    private static int campsCount = 3;
+//    private static int campsCount = 3;
 
     static {
-        camps.add(new Campground("Solang Valley", "https://i.imgur.com/ODDE4xD.jpg", "Solang Valley in Manali attracts visitors from the far ends of the world"));
-        camps.add(new Campground( "Spiti Valley", "https://i.imgur.com/P8T8Sti.jpg", "Spiti Valley nestled in the Keylong district of Himachal Pradesh"));
-}
+        Campground camp1 = new Campground.CampBuilder()
+                .setName("Solang Valley")
+                .setSrc("https://i.imgur.com/ODDE4xD.jpg")
+                .setDescription("Solang Valley in Manali attracts visitors from the far ends of the world")
+                .getCamp();
+        Campground camp2 = new Campground.CampBuilder()
+            .setName("Spiti Valley")
+            .setSrc("https://i.imgur.com/P8T8Sti.jpg")
+            .setDescription("Spiti Valley nestled in the Keylong district of Himachal Pradesh")
+            .getCamp();
+
+        camps.add(camp1);
+        camps.add(camp2);
+    }
 
     public Campground save(Campground camp) {
         camps.add(camp);
