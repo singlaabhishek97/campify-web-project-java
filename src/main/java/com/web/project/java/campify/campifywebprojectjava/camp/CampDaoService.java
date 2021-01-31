@@ -19,10 +19,10 @@ public class CampDaoService {
                 .setDescription("Solang Valley in Manali attracts visitors from the far ends of the world")
                 .getCamp();
         Campground camp2 = new Campground.CampBuilder()
-            .setName("Spiti Valley")
-            .setSrc("https://i.imgur.com/P8T8Sti.jpg")
-            .setDescription("Spiti Valley nestled in the Keylong district of Himachal Pradesh")
-            .getCamp();
+                .setName("Spiti Valley")
+                .setSrc("https://i.imgur.com/P8T8Sti.jpg")
+                .setDescription("Spiti Valley nestled in the Keylong district of Himachal Pradesh")
+                .getCamp();
 
         camps.add(camp1);
         camps.add(camp2);

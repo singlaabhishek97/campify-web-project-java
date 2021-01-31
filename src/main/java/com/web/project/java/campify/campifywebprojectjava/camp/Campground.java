@@ -1,12 +1,17 @@
 package com.web.project.java.campify.campifywebprojectjava.camp;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Campground {
+    private static final AtomicInteger count = new AtomicInteger(0);
+    private final int campID;
 
     private String name;
     private String src;
     private String description;
 
     private Campground(CampBuilder builder) {
+        this.campID = count.incrementAndGet();
         this.name = builder.name;
         this.src = builder.src;
         this.description = builder.description;
@@ -20,11 +25,13 @@ public class Campground {
         return src;
     }
 
-    public String getDescription() {return description; }
+    public String getDescription() { return description; }
+
+    public int getCampID() { return campID; }
 
     @Override
     public String toString() {
-        return name + " " + src + " " + description;
+        return campID + name + " " + src + " " + description;
     }
 
     // Builder class
